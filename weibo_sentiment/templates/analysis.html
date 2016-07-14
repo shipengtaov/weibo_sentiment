@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container" style="margin-top: 4em; margin-left: 200px; margin-right:200px;">
+	{% if user_timeline_has_status %}
+		<div id="analysis-result" style="min-width:800px;height:400px; margin:0 auto;">
+		</div>
+	{% else %}
+		<p>你好像还没有发表过微博 =_=</p>
+	{% endif %}
+	<input type="hidden" id="analysis-categories" value="{{dates_str}}">
+	<input type="hidden" id="analysis-data" value="{{sentiments_str}}">
+	<input type="hidden" id="weibo-name" value="{{g.name}}">
+</div>
+{% endblock %}
+
+{% block footer %}
+<script src="{{ url_for('static', filename='js/jquery-1.9.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/highcharts.js') }}"></script>
+<script src="{{ url_for('static', filename='js/analysis.js') }}"></script>
+{% endblock %}

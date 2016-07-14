@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{{title or '你了解粉丝的情绪吗'}}</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/picnic.min.css') }}">
+		{% block head %}{% endblock %}
+	</head>
+	<body>
+		{% include 'menu.html' %}
+		{% block body %}{% endblock %}
+
+		{% block footer %}{% endblock %}
+		<script>{{g.google_analytics_script|safe}}</script>
+	</body>
+</html>
